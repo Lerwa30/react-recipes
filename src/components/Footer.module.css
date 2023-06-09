@@ -1,0 +1,24 @@
+footer {
+    display: flex;
+    padding-left: 100px;
+    margin-right: 500px;
+    align-items: center;
+    gap: 600px;
+    width: 100vw;
+    height: 150px;
+    border: solid black;
+    background-color: rgb(69, 66, 66);
+}
+
+h5 {
+    color: white;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    gap: 15px;
+}
