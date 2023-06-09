@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 60px;
+    background-color: orange;
+    color: white;
+}
+
+.headercontent {
+    padding: 15px;
+}
+
+.nav {
+    padding: 15px;
+
+}
+
+.link {
+    padding-right: 15px;
+    
+}
+
+button {
+    border: none;
+    background-color: orange;
+    color: white;
+}
