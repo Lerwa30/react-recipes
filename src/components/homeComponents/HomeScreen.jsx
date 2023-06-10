@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { useEffect } from 'react'
 import AdBanner from './AdBanner'
+import RecipeCard from '../../elements/RecipeCard';
 
 const HomeScreen = () => {  
 
@@ -21,6 +22,7 @@ const HomeScreen = () => {
   return (
     <div>
       <AdBanner />
+      <RecipeCard />
       {/* Much code from Part 2 will be placed around here. Do your best! */}
     </div>
   )
