@@ -1,0 +1,29 @@
+.pic {
+    height: 400px;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+}
+
+h1 {
+    color: orange;
+    font-size: 40px;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+}
+
+button {
+    background-color: teal;
+    height: 40px;
+    width: 130px;
+
+}
