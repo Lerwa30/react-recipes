@@ -22,6 +22,7 @@ const HomeScreen = () => {
   return (
     <div>
       <AdBanner />
+      <input></input>
       <RecipeCard />
       {/* Much code from Part 2 will be placed around here. Do your best! */}
     </div>

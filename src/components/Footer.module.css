@@ -3,9 +3,9 @@ footer {
     padding-left: 100px;
     margin-right: 500px;
     align-items: center;
-    gap: 600px;
+    gap: 900px;
     width: 100vw;
-    height: 150px;
+    height: 160px;
     border: solid black;
     background-color: rgb(69, 66, 66);
 }
