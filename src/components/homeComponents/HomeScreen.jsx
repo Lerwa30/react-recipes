@@ -5,11 +5,10 @@ import axios from 'axios'
 
 const HomeScreen = () => {
   const [recipes, setRecipes] = useState([])
-  const url = 'https://recipes.devmountain.com'
 
   const getRecipes = () => {
     axios
-      .get(`${url}/recipes`)
+      .get('https://recipes.devmountain.com/recipes')
       .then((res) => {
         setRecipes(res.data)
         console.log(res.data)
