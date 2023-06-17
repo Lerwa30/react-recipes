@@ -17,10 +17,10 @@ h1 {
     font-size: 40px;
 }
 
-h2 {
+/* h2 {
     color: white;
     text-align: center;
-}
+} */
 
 .recipe_section {
     display: flex;
