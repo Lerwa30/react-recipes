@@ -1,32 +1,24 @@
-import classes from "./RecipeCard.module.css";
+import React from "react";
+import { Navigate } from "react-router-dom";
+import styles from "./RecipeCard.module.css";
+import { useNavigate } from "react-router-dom";
 
-const RecipeCard = () => {
+const RecipeCard = ({recipe}) => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(`/recipe/${recipe.recipe_id}`)
+  }
   return (
-    <div className={classes.cardContainer}>
-      <div className={classes.card}>
-        <img
-          className={classes.cardImg}
-          src="https://iamhomesteader.com/wp-content/uploads/2020/12/shrimp-ceviche-3.jpg"
-        ></img>
-        <p>Shrimp Ceviche</p>
-        <button>See More</button>
+    <div className={styles.recipe_card}>
+      <div>
+        <div className={styles.recipe_img_container}>
+          <img src={recipe.image_url} />
+          {/* <img src="https://www.atablefullofjoy.com/wp-content/uploads/2020/02/German-Chocolate-Cake-Recipe-SQUARE.jpg" /> */}
+        </div>
+        <h3>{recipe.recipe_name}</h3>
       </div>
-      <div className={classes.card}>
-        <img
-          className={classes.cardImg}
-          src="https://www.thespruceeats.com/thmb/W5g8vRsNwty_CBmnK4mdJ38ZdsA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/birria-tacos-recipe-5189284-hero-01-56190b7eb77b4370a0bf7f2341e94ee4.jpg"
-        ></img>
-        <p>Birria Tacos</p>
-        <button>See More</button>
-      </div>
-      <div className={classes.card}>
-        <img
-          className={classes.cardImg}
-          src="https://images.ctfassets.net/3s5io6mnxfqz/5wiweE8cY6gj64AfAh3OK/e6e3c8d0cf88ca01a3d198deb4ca62c8/AdobeStock_205566472.jpeg"
-        ></img>
-        <p>Cabeza Tacos</p>
-        <button>See More</button>
-      </div>
+      <button className="blue-btn" onClick={handleClick}>See More</button>
     </div>
   );
 };

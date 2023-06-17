@@ -1,9 +1,8 @@
 footer {
     display: flex;
-    padding-left: 100px;
     margin-right: 500px;
     align-items: center;
-    gap: 900px;
+    gap: 600px;
     width: 100vw;
     height: 160px;
     border: solid black;
@@ -11,6 +10,7 @@ footer {
 }
 
 h5 {
+    padding-left: 100px;
     color: white;
 }
 
@@ -19,6 +19,7 @@ h5 {
     align-items: center;
     height: 50px;
     width: 50px;
+    padding-left: 100px;
     border-radius: 50%;
     gap: 15px;
 }
