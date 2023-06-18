@@ -1,8 +1,19 @@
 import React from "react";
+import { useState } from "react";
 
 import { Formik } from "formik";
 
 const NewRecipeScreen = () => {
+  const [ingredients, setIngredients] = useState([]);
+  const [name, setName] = useState("");
+  const [quantity, setQuantity] = useState("");
+
+  const addIngredient = () => {
+    setIngredients([...ingredients, { name, quantity }]);
+    setName("");
+    setQuantity("");
+  };
+
   const initialValues = {
     type: "",
     recipeName: "",
@@ -15,6 +26,7 @@ const NewRecipeScreen = () => {
   };
 
   const onSubmit = (values) => {
+    values.ingredients = ingredients;
     console.log(values);
   };
 
@@ -23,7 +35,7 @@ const NewRecipeScreen = () => {
       <h1>Tell us about your Recipe!</h1>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ values, handleChange, handleSubmit }) => (
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               placeholder="Title your Recipe!"
               value={values.recipeName}
@@ -36,9 +48,33 @@ const NewRecipeScreen = () => {
               onChange={handleChange}
               name="imgUrl"
             ></input>
-            <input type="radio"></input>
-            <input type="radio"></input>
-            <input type="radio"></input>
+            <div>
+            <input
+              type="radio"
+              value="Cook"
+              onChange={handleChange}
+              name="type"
+            />
+            <p>Cook</p>
+            </div>
+            <div>
+            <input
+              type="radio"
+              value="Bake"
+              onChange={handleChange}
+              name="type"
+            />
+            <p>Bake</p>
+            </div>
+            <div>
+            <input
+              type="radio"
+              value="Drink"
+              onChange={handleChange}
+              name="type"
+            />
+            <p>Drink</p>
+            </div>
             <input
               placeholder="Enter Prep Time!"
               value={values.prepTime}
@@ -57,8 +93,16 @@ const NewRecipeScreen = () => {
               onChange={handleChange}
               name="serves"
             ></input>
-            <input></input>
-            <input></input>
+            <input
+              placeholder="Ingredient"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            ></input>
+            <input
+              placeholder="Quantity"
+              value={quantity}
+              onChange={(event) => setQuantity(event.target.value)}
+            ></input>
             <input
               type="textarea"
               placeholder="Instructions"
@@ -66,6 +110,16 @@ const NewRecipeScreen = () => {
               onChange={handleChange}
               name="instructions"
             ></input>
+            <button
+              type="button"
+              className="orange-btn"
+              onClick={addIngredient}
+            >
+              Add Ingredient
+            </button>
+            <button type="submit" className="blue-btn">
+              Submit
+            </button>
           </form>
         )}
       </Formik>
