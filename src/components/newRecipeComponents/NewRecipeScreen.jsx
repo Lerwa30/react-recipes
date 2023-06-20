@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import classes from './NewRecipe.module.css'
 
 import { Formik } from "formik";
 
@@ -39,10 +40,11 @@ const NewRecipeScreen = () => {
 
   return (
     <section>
-      <h1>Tell us about your Recipe!</h1>
+      <h1 className={classes.header}>Tell us about your Recipe!</h1>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ values, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
+            <div className={classes.nameImg}>
             <input
               placeholder="Title your Recipe!"
               value={values.recipeName}
@@ -55,6 +57,8 @@ const NewRecipeScreen = () => {
               onChange={handleChange}
               name="imgUrl"
             ></input>
+            </div>
+            <div className={classes.radioContainer}>
             <div>
             <input
               type="radio"
@@ -82,6 +86,8 @@ const NewRecipeScreen = () => {
             />
             <p>Drink</p>
             </div>
+            </div>
+            <div className={classes.prepContainer}>
             <input
               placeholder="Enter Prep Time!"
               value={values.prepTime}
@@ -100,6 +106,8 @@ const NewRecipeScreen = () => {
               onChange={handleChange}
               name="serves"
             ></input>
+            </div>
+            <div className={classes.ingredientContainer}>
             <input
               placeholder="Ingredient"
               value={name}
@@ -110,21 +118,24 @@ const NewRecipeScreen = () => {
               value={quantity}
               onChange={(event) => setQuantity(event.target.value)}
             ></input>
-            <input
-              type="textarea"
-              placeholder="Instructions"
-              value={values.instructions}
-              onChange={handleChange}
-              name="instructions"
-            ></input>
-            <button
+            </div>
+            <button 
+              className={classes.ingredientBtn}
               type="button"
-              className="orange-btn"
               onClick={addIngredient}
             >
               Add Ingredient
             </button>
-            <button type="submit" className="blue-btn">
+            <textarea
+              type="textarea"
+              rows="5"
+              cols="40"
+              placeholder="Instructions"
+              value={values.instructions}
+              onChange={handleChange}
+              name="instructions"
+            ></textarea>
+            <button type="submit" className={classes.formSubmitBtn}>
               Submit
             </button>
           </form>
