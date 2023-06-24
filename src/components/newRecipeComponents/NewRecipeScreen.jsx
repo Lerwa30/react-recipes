@@ -55,7 +55,7 @@ const NewRecipeScreen = () => {
               placeholder="Upload a Photo!"
               value={values.imageUrl}
               onChange={handleChange}
-              name="imgUrl"
+              name="imageUrl"
             ></input>
             </div>
             <div className={classes.radioContainer}>
